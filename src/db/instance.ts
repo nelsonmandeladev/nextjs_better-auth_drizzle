@@ -6,12 +6,12 @@ import { Logger } from 'drizzle-orm/logger';
 import * as schema from './schemas';
 
 // Validate environment variables
-if (!process.env.DATABASE_URL) {
-    throw new Error('DATABASE_URL environment variable is required');
+if (!process.env.NEXT_PUBLIC_DATABASE_URL) {
+    throw new Error('NEXT_PUBLIC_DATABASE_URL environment variable is required');
 }
 
 // Create the SQL client
-const sql = neon(process.env.DATABASE_URL);
+const sql = neon(process.env.NEXT_PUBLIC_DATABASE_URL);
 
 // Custom logger for development
 class CustomLogger implements Logger {
